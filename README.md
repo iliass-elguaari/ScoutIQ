@@ -124,28 +124,6 @@ java -cp out ScoutIQ
 - Simple automated testing
 - Greedy selection algorithm
 
-## How to Explain It in an Interview
-
-A short explanation:
-
-> I built ScoutIQ in Java to analyze soccer players and automatically generate lineups. Each player has attributes such as pace, shooting, passing, defending, stamina, and goalkeeping. I created a position-specific scoring algorithm, so the importance of each attribute changes depending on the role. The lineup generator uses a greedy algorithm to pick the best available unused player for each formation spot. I used ArrayList for the roster, HashSet to prevent duplicate selections, LinkedHashMap to keep formation order, CSV file I/O for persistence, and a small test suite to verify the main logic.
-
-If asked why HashSet is used:
-
-> I need to quickly know whether a player has already been selected. HashSet is a good fit because membership checks are fast on average.
-
-If asked why LinkedHashMap is used:
-
-> I wanted a mapping from lineup spot to player, but I also wanted the positions to print in the same order they were inserted.
-
-If asked about the algorithm:
-
-> The generator uses a greedy strategy. For each position in the formation, it scans the available players, calculates their suitability score for that role, and picks the highest-scoring player who has not already been used.
-
-If asked what you would improve later:
-
-> I would replace the greedy lineup selection with a global assignment optimization algorithm, add real match data, and build a graphical or web interface.
-
 ## Resume Bullet
 
 **ScoutIQ — Java Soccer Squad Analysis Engine**  
